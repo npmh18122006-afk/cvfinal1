@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyen Pham Minh Hung | Professional Educator Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* Color Palette & Base Styles for Education */
+        :root {
+            --primary: #1e3a8a;       /* Deep professional navy */
+            --primary-light: #0284c7; /* Inspiring sky blue */
+            --dark: #1e293b;          /* Slate dark */
+            --light: #f8fafc;         /* Soft off-white */
+            --bg-page: #ffffff;
+            --border: #e2e8f0;
+            --accent: #b45309;        /* Warm amber for achievements */
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth; /* Smooth scrolling effect */
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            background-color: #f1f5f9;
+            font-size: 11pt;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            background: var(--bg-page);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
+
+        /* Header & Navigation */
+        .site-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 6px;
+            position: sticky; 
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        .site-header h1 {
+            margin: 0;
+            font-size: 24pt;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .tagline {
+            font-size: 12pt;
+            color: #bae6fd;
+            margin-top: 5px;
+            margin-bottom: 18px;
+            font-style: italic;
+            font-weight: 500;
+        }
+
+        .nav-simulation {
+            font-size: 9pt;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 12px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .nav-simulation a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s, border-bottom 0.3s;
+            padding-bottom: 2px;
+        }
+        
+        .nav-simulation a:hover, .nav-simulation a.active {
+            color: white;
+            border-bottom: 2px solid white;
+        }
+
+        /* Layout Sections */
+        .section {
+            margin-bottom: 45px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #e2e8f0;
+            scroll-margin-top: 190px; /* Offset spacing for navigation bar */
+        }
+        
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            color: var(--primary);
+            font-size: 16pt;
+            font-weight: 600;
+            border-left: 5px solid var(--primary-light);
+            padding-left: 12px;
+            margin-top: 0;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        h3 {
+            color: var(--accent);
+            font-size: 12.5pt;
+            font-weight: 600;
+            margin-top: 25px;
+            margin-bottom: 12px;
+        }
+
+        p {
+            margin-top: 0;
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+
+        /* Profile Block with Image Integration */
+        .profile-container {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+
+        .profile-image-wrapper {
+            flex-shrink: 0;
+            width: 180px;
+            height: 230px;
+            border-radius: 6px;
+            overflow: hidden;
+            border: 3px solid var(--primary);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .profile-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-details {
+            flex-grow: 1;
+        }
+
+        .meta-grid {
+            background-color: var(--light);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 15px;
+        }
+        
+        .meta-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .meta-table td {
+            padding: 6px 0;
+            vertical-align: top;
+            border: none;
+        }
+        .meta-table td.label {
+            font-weight: bold;
+            color: var(--primary);
+            width: 25%;
+        }
+
+        /* Data Tables */
+        table.data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+
+        table.data-table th, table.data-table td {
+            border: 1px solid var(--border);
+            padding: 12px 14px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        table.data-table th {
+            background-color: #f1f5f9;
+            color: var(--dark);
+            font-weight: bold;
+        }
+
+        table.data-table tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        .time-col {
+            font-weight: bold;
+            color: var(--accent);
+            width: 12%;
+        }
+
+        /* Lists */
+        ul, ol {
+            margin-top: 0;
+            margin-bottom: 12px;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        /* Custom UI Components */
+        .callout-box {
+            background-color: #fffbeb;
+            border-left: 4px solid #d97706;
+            padding: 12px 15px;
+            margin-bottom: 15px;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .pitch-box {
+            background-color: #f8fafc;
+            border: 1px dashed var(--primary-light);
+            padding: 15px;
+            border-radius: 6px;
+            font-style: normal;
+            margin-top: 10px;
+            text-align: justify;
+        }
+
+        .cv-block {
+            margin-bottom: 20px;
+        }
+
+        .cv-block-title {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            color: var(--primary);
+            border-bottom: 1px dashed var(--border);
+            padding-bottom: 3px;
+            margin-bottom: 5px;
+        }
+
+        .btn-simulation {
+            display: inline-block;
+            background-color: var(--primary-light);
+            color: white;
+            padding: 8px 16px;
+            font-size: 9.5pt;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-right: 10px;
+            margin-top: 5px;
+            border: 1px solid #0284c7;
+            cursor: pointer;
+        }
+        
+        .btn-simulation:hover {
+            background-color: var(--primary);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+        }
+
+        .timeline-container {
+            margin-top: 15px;
+        }
+        
+        .timeline-phase {
+            border-left: 2px solid var(--primary-light);
+            padding-left: 18px;
+            position: relative;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        
+        .timeline-phase::before {
+            content: "";
+            position: absolute;
+            left: -6px;
+            top: 4px;
+            width: 10px;
+            height: 10px;
+            background-color: var(--primary);
+            border-radius: 50%;
+        }
+
+        .phase-title {
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 5px;
+            font-size: 11.5pt;
+        }
+
+        .text-muted {
+            color: #64748b;
+            font-size: 9.5pt;
+            display: block;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <header class="site-header" id="home">
+        <h1>NGUYEN PHAM MINH HUNG</h1>
+        <div class="tagline">"Cultivating Critical Thinkers and Lifelong Learners: Bridging Modern Pedagogical Innovation and Student-Centered Classrooms."</div>
+        <nav class="nav-simulation">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About Me</a>
+            <a href="#cv">Curriculum Vitae</a>
+            <a href="#lesson-plan">Lesson Plan</a>
+            <a href="#career-plan">Career Plan</a>
+            <a href="#reflection">Reflection Log</a>
+            <a href="#portfolio">Portfolio &amp; Artifacts</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="section" id="about">
+        <h2>About Me</h2>
+        
+        <div class="profile-container">
+            <div class="profile-image-wrapper">
+                <img src="http://googleusercontent.com/image_collection/image_retrieval/15076595298089363678" alt="Nguyen Pham Minh Hung Headshot Portrait">
+            </div>
+            <div class="profile-details">
+                <div class="meta-grid">
+                    <table class="meta-table">
+                        <tr>
+                            <td class="label">Target Field:</td>
+                            <td>Education &amp; Pedagogy (Professional Educator)</td>
+                        </tr>
+                        <tr>
+                            <td class="label">Email Contact:</td>
+                            <td>hungnguyen30041829@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td class="label">Phone Number:</td>
+                            <td>0976123220</td>
+                        </tr>
+                        <tr>
+                            <td class="label">Action Profiles:</td>
+                            <td>
+                                <a class="btn-simulation" href="#cv">[↓] Jump to Full CV</a>
+                                <a class="btn-simulation btn-secondary" href="#lesson-plan">View Lesson Plan →</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <h3>Professional Summary (Bio)</h3>
+        <p>
+            I am an ambitious, passionate, and detail-oriented aspiring educator dedicated to cultivating dynamic and inclusive learning environments. With a comprehensive foundation in modern instructional design, differentiated learning strategies, and classroom management frameworks, I strive to transform traditional curriculum units into deeply engaging, student-centered learning experiences. Driven by a commitment to educational equity and continuous self-improvement, I aim to empower students to unlock their full academic and personal potential.
+        </p>
+
+        <h3>Core Competencies Matrix</h3>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th style="width: 50%;">Hard Skills / Teaching Competencies</th>
+                    <th style="width: 50%;">Soft Skills / Interpersonal Capacities</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Instructional Design &amp; Lesson Planning</li>
+                            <li>Differentiated Instruction Methodologies</li>
+                            <li>Educational Technology Integration (EdTech)</li>
+                            <li>Formative &amp; Summative Assessment Alignment</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>Classroom Leadership &amp; Empathy</li>
+                            <li>Active Listening &amp; Conflict Resolution</li>
+                            <li>Cross-Cultural Communication</li>
+                            <li>Adaptability &amp; Creative Problem-Solving</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section class="section" id="cv">
+        <h2>Curriculum Vitae (CV)</h2>
+        
+        <h3>Education History</h3>
+        <div class="cv-block">
+            <div class="cv-block-title">
+                <span>Bachelor of Arts in Education</span>
+                <span>Expected 2026</span>
+            </div>
+            <p><em>University Excellence Track | Hanoi, Vietnam</em></p>
+            <ul>
+                <li>Target Cumulative GPA: 3.2+ / 4.0</li>
+                <li>Key Coursework: Educational Psychology, Curriculum Construction, Applied Classroom EdTech Systems.</li>
+            </ul>
+        </div>
+
+        <h3>Professional Credentials &amp; Certifications</h3>
+        <ul>
+            <li><strong>TESOL / TEFL Certificate:</strong> International Professional Teaching Methodology Track (120 Hours).</li>
+            <li><strong>Google Certified Educator Level 1:</strong> Advanced Classroom Technology &amp; Ecosystem Deployment.</li>
+            <li><strong>Differentiated Instruction Certificate:</strong> Addressing diverse learning behaviors in mixed-ability spaces.</li>
+        </ul>
+
+        <h3>Teaching Practicum &amp; Volunteer Experience</h3>
+        <div class="cv-block">
+            <div class="cv-block-title">
+                <span>Student Assistant &amp; Peer Tutor</span>
+                <span>2024 - Present</span>
+            </div>
+            <p><em>Community Education Support Program | Hanoi, Vietnam</em></p>
+            <ul>
+                <li>Designed custom remedial reading tasks for a group of 15 secondary school students, achieving a 15% average increase in term assessment scores.</li>
+                <li>Coordinated with master educators to deploy gamified formative tests via platforms like Kahoot and Padlet, reducing lesson downtime.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="section" id="lesson-plan">
+        <h2>Featured Lesson Plan</h2>
+        <div class="callout-box">
+            <strong>Topic:</strong> The Power of Critical Thinking in the Digital Age<br>
+            <strong>Target Group:</strong> Grade 10 - 12 | <strong>Subject:</strong> English &amp; Social Studies | <strong>Duration:</strong> 60 Minutes
+        </div>
+        
+        <h3>1. Instructional Objectives</h3>
+        <p>By the end of this 60-minute interactive module, students will be able to:</p>
+        <ul>
+            <li>Identify at least 3 cognitive inconsistencies or confirmation biases within modern digital print media.</li>
+            <li>Apply the systematic <strong>CRAAP Test</strong> (Currency, Relevance, Authority, Accuracy, Purpose) parameters to audit online sources with 100% execution accuracy.</li>
+            <li>Differentiate between high-fidelity strategic corporate insights and low-fidelity social noise.</li>
+        </ul>
+
+        <h3>2. Detailed Instructional Procedure</h3>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th style="width: 12%;">Time</th>
+                    <th style="width: 18%;">Stage</th>
+                    <th style="width: 35%;">Teacher Activity</th>
+                    <th style="width: 35%;">Student Activity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="time-col">10 Min</td>
+                    <td><strong>The Hook</strong></td>
+                    <td>Project a highly controversial, intentionally fabricated "Fake News" headline regarding modern trends on the board. Inquire: <em>"How do we know this is factual?"</em></td>
+                    <td>Engage in rapid-fire group brainstorming. Analyze structural elements of the headline to locate red flags or emotional triggers.</td>
+                </tr>
+                <tr>
+                    <td class="time-col">20 Min</td>
+                    <td><strong>Core Modeling</strong></td>
+                    <td>Introduce and break down the 5 components of the <strong>CRAAP framework</strong>. Model data verification on the initial Hook sample using a structured checklist.</td>
+                    <td>Document parameters in personal logs. Actively contribute validation checkmarks as the teacher dissects the source live.</td>
+                </tr>
+                <tr>
+                    <td class="time-col">30 Min</td>
+                    <td><strong>Guided Practice</strong></td>
+                    <td>Launch the <em>"Data Detective"</em> team task. Group students into 4-peer squads and distribute distinct digital media assets via tablet links. Maintain scaffolding support.</td>
+                    <td>Collaborate in squads. Apply the CRAAP test matrix to cross-examine assigned assets and map out structural arguments on whether the data is insight or noise.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>3. Assessment &amp; Inclusive Differentiation</h3>
+        <ul>
+            <li><strong>Formative Assessment Loop:</strong> Utilization of instant digital Exit Tickets via Google Forms to track student comprehension before room dismissal.</li>
+            <li><strong>Scaffolding Adaptability:</strong> Differentiated graphic organizer handouts provided to specific mixed-ability profiles. Extension tasks exploring systemic socio-economic ripples of misinformation provided to advanced learners.</li>
+        </ul>
+    </section>
+
+    <section class="section" id="career-plan">
+        <h2>Career Plan</h2>
+        <p><strong>Ultimate Career Goal:</strong> To become a Senior Licensed Educator and Curriculum Development Lead within 4 years, specializing in student-centered pedagogical strategies aligned with global 21st-century learning trends.</p>
+        
+        <div class="timeline-container">
+            <div class="timeline-phase">
+                <div class="phase-title">Year 1: Foundation Building (Pedagogical Theory &amp; Classroom Mechanics)</div>
+                <strong>Milestone:</strong> Achieve cumulative GPA &gt; 3.2/4.0; Master fundamental child development theories and lesson metrics.<br>
+                <strong>Learning Plan &amp; Courses:</strong> Educational Psychology, Foundations of Curriculum Design, Instructional Technology Platforms.
+            </div>
+
+            <div class="timeline-phase">
+                <div class="phase-title">Year 2: Skill Specialization &amp; Practical Practice</div>
+                <strong>Milestone:</strong> Attain 2 professional teaching/EdTech credentials; Launch live digital portfolio showcasing class blueprints.<br>
+                <strong>Learning Plan &amp; Certifications:</strong> Differentiated Instruction certification, Advanced Classroom Management workflows.
+            </div>
+
+            <div class="timeline-phase">
+                <div class="phase-title">Year 3: Classroom Immersion &amp; Student Teaching Residency</div>
+                <strong>Milestone:</strong> Secure a 3 to 6-month formal Teaching Internship / Practicum residency at a reputable international school or educational organization.<br>
+                <strong>Learning Plan &amp; Real Experience:</strong> Co-teaching core classrooms, lead instruction execution, continuous parent-teacher alignment meetings, student feedback loop analytics.
+            </div>
+
+            <div class="timeline-phase">
+                <div class="phase-title">Year 4: Full Launch &amp; Professional Licensing</div>
+                <strong>Milestone:</strong> Graduate with academic Honors; Pass national/international educator licensing exams; Secure a full-time lead teacher position.<br>
+                <strong>Market Strategic Alignment:</strong> Tailor expertise directly toward global educational analytics showing a 25% increase in institution demand for technology-integrated blended learning spaces.
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="reflection">
+        <h2>Reflection Log</h2>
+        <div class="callout-box">
+            <strong>Log Entry:</strong> Transforming Academic Principles into Real Student Engagement
+        </div>
+        
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th style="width: 35%;">Reflective Dimension</th>
+                    <th style="width: 65%;">Self-Assessment &amp; Evidence Summary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Progress Toward Short-Term Goals</strong></td>
+                    <td>Successfully met the short-term goal of mastering advanced instructional design parameters and officially cataloging these multi-tiered materials on this digital repository website.</td>
+                </tr>
+                <tr>
+                    <td><strong>New Insights on Career Trajectory</strong></td>
+                    <td>Realized through empirical lesson execution that perfect instructional content is only 50% of effective instruction. True educational excellence lies in empathy and classroom relationship management—transforming rigid curricula into adaptive learning spaces that welcome diverse student voices.</td>
+                </tr>
+                <tr>
+                    <td><strong>Challenges Encountered &amp; Resolution</strong></td>
+                    <td><em>Challenge:</em> Balancing demanding university coursework alongside intensive preparation for specialized professional education certifications.<br><em>Solution:</em> Implemented systemic time-blocking on structured calendars and utilized the Eisenhower Matrix to prioritize lesson plan construction under tight timelines.</td>
+                </tr>
+                <tr>
+                    <td><strong>Measurable Evidence of Improvement</strong></td>
+                    <td>Shifted perspective from a passive observer of educational theories to an active classroom leader. Demonstrated by successfully guiding a collaborative group of 4 peers to deliver an innovative, interdisciplinary curriculum pilot with excellent feedback and no delivery errors.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section class="section" id="portfolio">
+        <h2>Portfolio &amp; Artifacts</h2>
+        <h3>Theory in Action: Featured Projects &amp; Evidence</h3>
+        
+        <div style="margin-bottom: 20px;">
+            <strong style="color: var(--primary);">Artifact #1: Academic Capstone Project</strong><br>
+            <span class="phase-title" style="font-size: 10.5pt; display:inline-block; margin-top:3px;">Interactive Unit Blueprint for Hybrid Classrooms</span>
+            <p style="margin-top: 5px;">
+                Designed and developed a comprehensive 4-week thematic unit integration plan utilizing gamified edtech platforms. Implemented differentiated tracks that boosted student engagement metrics by 20% and normalized comprehension tracking during simulated micro-teaching sessions.
+            </p>
+            <span class="text-muted">Interactive Media Attachment: <em>[Embed Video Demonstration of Micro-Teaching / Classroom Materials Link]</em></span>
+        </div>
+
+        <div>
+            <strong style="color: var(--primary);">Artifact #2: Industry Certifications</strong>
+            <ul>
+                <li><strong>TESOL / TEFL International Certificate</strong> (Professional Teaching Methodology Track)</li>
+                <li><strong>Google Certified Educator Level 1</strong> (Advanced Classroom Technology Deployment)</li>
+            </ul>
+            <span class="text-muted">Verification Badges: <em>[Scanned Certificates &amp; Professional Teaching Credentials Vault]</em></span>
+        </div>
+
+        <h3 style="margin-top: 30px; border-top: 1px solid var(--border); padding-top: 20px;">Mock Job Fair Professional Assessment Track</h3>
+        <p><strong>Elevator Candidate Pitch:</strong></p>
+        <div class="pitch-box">
+            "Hello! My name is Minh Hung Nguyen. I am a passionate and dedicated aspiring educator focused on empowering students through modern, student-centered learning methodologies. As showcased in my digital portfolio here, my academic journey directly integrates rigorous educational theories with actual classroom applications—spanning from developing interactive hybrid unit designs to securing global professional certifications in teaching and educational technology. I am excited to bring my instructional design rigor, empathetic classroom leadership, and collaborative spirit to your institution as a dedicated member of your teaching faculty."
+        </div>
+        <p style="margin-top: 15px;"><strong>Behavioral Showcase Parameters:</strong></p>
+        <ul>
+            <li>Maintain deliberate, welcoming professional posture and steady eye contact during interviewer evaluations.</li>
+            <li>Deploy the <strong>STAR Method</strong> (Situation, Task, Action, Result) instantly upon inquiries regarding pedagogical scenarios.</li>
+        </ul>
+    </section>
+
+    <section class="section" id="contact">
+        <h2>Contact</h2>
+        <p>If you are an academic recruiter, institution representative, or fellow educator, please feel free to reach out through my official professional credentials below:</p>
+        <ul>
+            <li><strong>Full Name:</strong> Nguyen Pham Minh Hung</li>
+            <li><strong>Professional Email:</strong> <a href="mailto:hungnguyen30041829@gmail.com" style="color: var(--primary-light); text-decoration: none; font-weight: bold;">hungnguyen30041829@gmail.com</a></li>
+            <li><strong>Contact Hotline:</strong> <a href="tel:0976123220" style="color: var(--primary-light); text-decoration: none; font-weight: bold;">0976123220</a></li>
+            <li><strong>Current Location:</strong> Hanoi, Vietnam</li>
+        </ul>
+    </section>
+
+</div>
+
+</body>
+</html>
